@@ -1,0 +1,7 @@
+{
+  "distribution": "sudo-scope-audit",
+  "package": "sudo_scope_audit",
+  "command": "sudo-scope-audit",
+  "license": "BSD-3-Clause",
+  "description": "Snapshot sudoers include and alias scope audit"
+}

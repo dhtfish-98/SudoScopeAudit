@@ -1,0 +1,5 @@
+{
+  "files": {
+    "/etc/sudoers": "Defaults env_reset,use_pty\nalice workstation=(root) PASSWD: /usr/sbin/status-helper"
+  }
+}

@@ -40,6 +40,17 @@ def uncomment(line):
             return line[:i].strip()
     return line.strip()
 
+def unescaped_colon(value):
+    escaped = False
+    for char in value:
+        if escaped:
+            escaped = False
+        elif char == '\\':
+            escaped = True
+        elif char == ':':
+            return True
+    return False
+
 def analyze(snapshot):
     mapping(snapshot, "snapshot")
     data = filemap(snapshot.get("files")); entry = string(snapshot.get("entry", "/etc/sudoers"), "entry")
@@ -146,7 +157,7 @@ def analyze(snapshot):
             report.check("grant_environment", 'SETENV' not in tags, where, "Environment override tag")
             for command in resolve('Cmnd', item):
                 if command == 'ALL': report.add("command_scope", "FAIL", where, "Unrestricted command grant"); continue
-                if command.startswith('^') or re.match(r'^sha\d+:', command) or ' : ' in command:
+                if command.startswith('^') or unescaped_colon(command):
                     report.add("command_semantics", "OPEN", where, "Digest/regex/multi-host syntax unsupported"); continue
                 executable = command.split()[0].replace('\\', '')
                 if not executable.startswith('/'):

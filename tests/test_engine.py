@@ -7,6 +7,15 @@ class SudoTests(unittest.TestCase):
     def test_narrow_positive(self):
         r=analyze(self.snapshot('Defaults env_reset,use_pty\nalice workstation=(root) PASSWD: /usr/sbin/status-helper'))
         self.assertEqual(r['status'],'PASS')
+    def test_multihost_separator_spacing(self):
+        for separator in (':', ' :', ': ', ' : ', '\t:\t'):
+            with self.subTest(separator=separator):
+                text='alice host1=/usr/sbin/status-helper'+separator+'ALL=/usr/sbin/check'
+                self.assertEqual(analyze(self.snapshot(text))['status'],'OPEN')
+    def test_escaped_colon_command_argument(self):
+        self.assertEqual(analyze(self.snapshot(r'alice box=/usr/sbin/helper a\:b'))['status'],'PASS')
+    def test_even_backslashes_do_not_escape_host_separator(self):
+        self.assertEqual(analyze(self.snapshot(r'alice box=/usr/sbin/helper a\\:ALL=/usr/sbin/check'))['status'],'OPEN')
     def test_inherited_auth_tags(self):
         r=analyze(self.snapshot('alice workstation=(root) NOPASSWD: /usr/sbin/a, /usr/sbin/b, PASSWD: /usr/sbin/c'))
         self.assertEqual([f['status'] for f in r['findings'] if f['check']=='grant_auth'],['FAIL','FAIL','PASS'])

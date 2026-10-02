@@ -1,3 +1,5 @@
+# Author: dhtfish98
+# Copyright (c) 2026 dhtfish98
 """Syntactic sudoers risk review over supplied files, never privilege evaluation."""
 import json
 import posixpath

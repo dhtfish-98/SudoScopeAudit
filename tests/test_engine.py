@@ -1,3 +1,5 @@
+# Author: dhtfish98
+# Copyright (c) 2026 dhtfish98
 import unittest
 from sudo_scope_audit import analyze
 from sudo_scope_audit.common import InputError

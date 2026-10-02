@@ -1,20 +1,13 @@
 {
   "name": "SudoScopeAudit",
-  "group": "host",
+  "version": "0.1.2",
   "status": "PASS",
-  "version": "0.1.1",
   "test_count": 23,
-  "source_code_sha256": "29d2904ac52eace117225453404f4f5106f9e474b91db619db592d77a015088e",
-  "wheel_sha256": "989f10e25f879ad85bc01e3fc2b465d5d286a19798c540cb078e12c466711d99",
-  "source_wheel_installed_bytes": "PASS",
-  "licenses": "PASS",
-  "dependency_check": "PASS",
-  "verified_utc": "2026-10-02T11:19:56.816705+00:00",
-  "wheel": "sudo_scope_audit-0.1.1-py3-none-any.whl",
-  "verification": "Fresh per-project environment; wheel/source/installed runtime byte comparison; complete installed unittest suite; pip dependency check; license byte checks",
-  "runtime_platform": "Python 3.14 macOS arm64; remote Linux CI recorded separately",
+  "wheel_sha256": "7eba5183d6fd4cdc1f29346348c6e578e4a92056a4c841b7c32b9608d69975fb",
+  "author": "dhtfish98",
+  "wheel": "sudo_scope_audit-0.1.2-py3-none-any.whl",
+  "verification": "Rebuilt wheel, separate installed tests, package author metadata, runtime and retained third-party notice byte verification",
+  "record_kind": "Attribution patch verification",
   "application_qualification": "OPEN",
-  "whole_upstream_equivalence": "OPEN",
-  "effective_deployed_protection": "OPEN",
-  "record_kind": "Current repaired release verification"
+  "whole_upstream_equivalence": "OPEN"
 }

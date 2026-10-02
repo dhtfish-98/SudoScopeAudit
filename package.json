@@ -4,5 +4,6 @@
   "command": "sudo-scope-audit",
   "license": "BSD-3-Clause",
   "description": "Snapshot sudoers include and alias scope audit",
-  "version": "0.1.1"
+  "version": "0.1.2",
+  "author": "dhtfish98"
 }

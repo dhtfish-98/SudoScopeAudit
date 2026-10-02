@@ -1,5 +1,9 @@
 # SudoScopeAudit
 
+Version **0.1.2**.
+
+New implementation author: **dhtfish98**. Copyright (c) 2026 dhtfish98 applies to the new implementation code. Upstream policy data, original notices and source references retain their original attribution.
+
 Snapshot sudoers include and alias scope audit. A complete independent new-scope defensive project; upstream-wide rewriting and equivalence are not claimed.
 
 Input: `{ "entry": "/etc/sudoers", "files": {"/etc/sudoers": "sudoers text"} }`. All includes are resolved against the supplied map, never the filesystem. Includedir follows lexical order and skips dot/tilde filenames. User/Host/Runas/Cmnd aliases support forward references with cycle/depth/10000-expansion limits. The complete frozen 344-basename risk catalog is included under the original BSD notice. Checks cover subject/host/runas ALL, password/environment tags (including inheritance), dangerous command names, writable-looking paths, wildcard scope and global Defaults. Negation, missing includes/aliases, scoped Defaults, digests, command regexes and multi-host segments are OPEN. Findings flag declared risk for review, not proof that a user can escalate privileges. Valid narrow grants may PASS only the stated static scope. Complete effective authorization is OPEN.

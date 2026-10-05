@@ -2,7 +2,7 @@
 
 # SudoScopeAudit
 
-Version **0.1.2**.
+Version **0.1.3**.
 
 New implementation author: **dhtfish98**. Copyright (c) 2026 dhtfish98 applies to the new implementation code. Upstream policy data, original notices and source references retain their original attribution.
 
